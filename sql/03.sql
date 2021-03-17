@@ -6,3 +6,19 @@
  * HINT:
  * This requires joining from the category table down to the actor table.
  */
+
+SELECT DISTINCT(first_name || ' ' || last_name) AS "Actor Name"
+FROM actor
+JOIN film_actor USING (actor_id)
+JOIN film USING (film_id)
+JOIN film_category USING (film_id)
+JOIN category USING (category_id)
+WHERE category.name = 'Children'
+INTERSECT
+SELECT DISTINCT(first_name || ' ' || last_name) AS "Actor Name"
+FROM actor
+JOIN film_actor USING (actor_id)
+JOIN film USING (film_id)
+JOIN film_category USING (film_id)
+JOIN category USING (category_id)
+WHERE category.name != 'Horror'
