@@ -4,26 +4,25 @@
  */
 
 
-
 CREATE TABLE project (
     -- d 8
-	created_at TIMESTAMPTZ,
+    created_at TIMESTAMPTZ,
     -- d 8
-	updated_at TIMESTAMPTZ,
+    updated_at TIMESTAMPTZ,
     -- d 8
-	author_id BIGINT NOT NULL,
+    author_id BIGINT NOT NULL,
     -- i 4
-	id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     -- i 4
-	project_id INTEGER NOT NULL UNIQUE,
+    project_id INTEGER NOT NULL UNIQUE,
     -- i 4
-	target_id INTEGER NOT NULL,
-    -- s 2
-	action SMALLINT NOT NULL,
+    target_id INTEGER NOT NULL,
     -- i 2
-	target_type VARCHAR(2) NOT NULL,
+    target_type VARCHAR(2) NOT NULL,
+    -- s 2
+    action SMALLINT NOT NULL,
     -- i 256
-	title VARCHAR(256),
+    title VARCHAR(256),
     -- i -1
-	data TEXT
+    data TEXT
 );
